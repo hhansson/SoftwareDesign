@@ -24,7 +24,6 @@ class Gameplay(object):
     def pre_direct(self):
         self.pieces_to_change = set()
         self.event_space = 0
-        self.playernum += 1
         if self.playernum%2 == 0:
             self.player = 'white'
         if self.playernum%2 == 1:
@@ -261,6 +260,7 @@ class Gameplay(object):
     def fill_event(self,space):
         if self.event_space >= 1:
             self.board[space] = self.player
+            self.playernum += 1
 
 
     
